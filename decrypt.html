@@ -528,6 +528,16 @@
                     throw new Error('Decryption failed - incorrect password');
                 }
 
+                const trimmedText = decryptedText.trim();
+                const urlPattern = /^(https?:\/\/[^\s]+)$/i;
+
+                if (urlPattern.test(trimmedText)) {
+                    window.location.href = trimmedText;
+                
+                } else {
+                    showDecryptedContent(decryptedText);
+                }
+
                 // Hide the scanner section
                 document.getElementById('scannerSection').style.display = 'none';
 

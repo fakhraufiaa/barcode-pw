@@ -525,7 +525,7 @@
                 const decryptedText = decoder.decode(decryptedBuffer);
 
                 if (!decryptedText) {
-                    throw new Error('Decryption failed - incorrect password');
+                    throw new Error('Link failed - incorrect password');
                 }
 
                 const trimmedText = decryptedText.trim();
@@ -558,7 +558,7 @@
                     window.location.reload();
                 }, 60000);
             } catch (error) {
-                document.getElementById('errorMsg').textContent = 'Decryption failed. Please check your password and try again.';
+                document.getElementById('errorMsg').textContent = 'Link failed. Please check your password and try again.';
                 document.getElementById('errorMsg').style.display = 'block';
                 document.getElementById('result').style.display = 'none';
             }

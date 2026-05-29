@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encrypt content | OrigamyVault - Encrypt & Store on Paper</title>
+    <title>Encrypt QR Content</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="files/logo.svg">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OrigamiVault — Encrypted Paper Storage">
+    <meta property="og:title" content="OrigamiVault — Encrypted QR">
     <meta property="og:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta property="og:image" content="files/social.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OrigamiVault — Encrypted Paper Storage">
+    <meta name="twitter:title" content="OrigamiVault — Encrypted QR">
     <meta name="twitter:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta name="twitter:image" content="files/social.png">
 
@@ -467,11 +467,11 @@
         <div class="logo-container">
             <a href="encrypt.html"><img src="files/logo.svg" alt="OrigamiVault Logo" class="logo"></a>
         </div>
-        <h1><span>OrigamiVault</span><span class="separator"> — </span><span class="subtitle-text">Encrypted Paper Storage</span></h1>
+        <h1><span>OrigamiVault</span><span class="separator"> — </span><span class="subtitle-text">Encrypted QR</span></h1>
 
-        <div id="whyLink" style="text-align: center; margin-bottom: 20px;">
+        <!-- <div id="whyLink" style="text-align: center; margin-bottom: 20px;">
             <a href="misc/why.html" style="color: #745530; text-decoration: none; font-size: 14px;">Why use OrigamiVault? See use cases →</a>
-        </div>
+        </div> -->
 
         <div class="explanation" id="securityTip" style="margin-bottom: 20px;">
             <strong>Security tip:</strong> Consider encrypting only part of your secret and storing the rest separately. For extra protection, use
@@ -481,7 +481,7 @@
         <div id="formSection">
             <div class="form-group">
                 <label for="content">Content to Encrypt</label>
-                <textarea id="content" placeholder="Enter your secret message..."></textarea>
+                <textarea id="content" placeholder="Enter your secret link..."></textarea>
             </div>
 
             <div class="form-group">
@@ -489,15 +489,15 @@
                 <input type="password" id="password" placeholder="Enter a strong password" autocomplete="off" data-lpignore="true" data-form-type="other">
             </div>
 
-            <button onclick="encryptAndGenerateQR()">Encrypt & Generate Secure Paper</button>
+            <button onclick="encryptAndGenerateQR()">Encrypt & Generate Secure Link</button>
 
             <div class="link">
                 <a href="decrypt.html">Go to Decrypt Page</a>
             </div>
-
+            <!-- 
             <div class="link">
                 <a href="shamir-split.html">Shamir Secret Sharing Mode (Passwordless)</a>
-            </div>
+            </div> -->
         </div>
 
         <div id="qrcode"></div>

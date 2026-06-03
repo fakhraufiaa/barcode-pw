@@ -622,8 +622,11 @@
                     <div class="info-box-info">Works offline, executable in browser console (open it via CMD+OPTION+I or CTRL + SHIFT + I)</div>
                 </div>
 
-                <button class="print-button" onclick="window.print()">Print</button>
-
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button class="print-button" onclick="window.print()" style="flex: 1;">🖨️ Print / Save as PDF</button>
+                    <button class="print-button" onclick="downloadAsJPG()" style="flex: 1; background: linear-gradient(135deg, #28a745 0%, #20c997 100%);">📸 Download as JPG / Image</button>
+                </div>
+                
                 <div class="decrypt-link-box" style="text-align: center; margin-top: 15px;">
                     <a href="${decryptBaseUrl}" target="_blank" style="color: #745530; text-decoration: none; font-weight: 500; font-size: 14px;">Open decrypt page in new tab →</a>
                 </div>
@@ -643,6 +646,76 @@
                 colorDark: "#000000",
                 colorLight: "#ffffff",
                 correctLevel: QRCode.CorrectLevel.M
+            });
+        }
+
+        async function downloadAsJPG(){
+            const element = document.getElementById('qrDataContainer');
+
+            if (!element) {
+                alert('QR code container not found!');
+                return;
+            }
+
+            if (typeof html2canvas === 'undefined') {
+                 // Coba load dari CDN
+                const script = document.createElement('script');
+                script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
+                script.onload = () => {
+                    captureAndDownload(element);
+                };
+                script.onerror = () => {
+                    alert('Gagal memuat library html2canvas. Periksa koneksi internet.');
+                };
+                document.head.appendChild(script);
+            } else {
+                captureAndDownload(element);
+            }
+        }
+
+       function captureAndDownload(element) {
+            // Dapatkan posisi dan ukuran elemen asli
+            const originalRect = element.getBoundingClientRect();
+            
+            // Buat canvas sementara dengan padding 20px di setiap sisi
+            const padding = 20;
+            const canvasWidth = originalRect.width + (padding * 2);
+            const canvasHeight = originalRect.height + (padding * 2);
+            
+            // Buat canvas baru untuk hasil akhir
+            const finalCanvas = document.createElement('canvas');
+            finalCanvas.width = canvasWidth;
+            finalCanvas.height = canvasHeight;
+            const ctx = finalCanvas.getContext('2d');
+            
+            // Isi background putih dengan border-radius
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvasWidth, canvasHeight);
+            
+            // Gambar elemen QR ke canvas sementara
+            html2canvas(element, {
+                scale: 3,
+                backgroundColor: '#ffffff',
+                logging: false,
+                useCORS: true
+            }).then(tempCanvas => {
+                // Gambar hasil html2canvas ke finalCanvas dengan posisi bergeser (padding)
+                ctx.drawImage(tempCanvas, padding, padding, originalRect.width, originalRect.height);
+                
+                // (Opsional) Tambahkan border tipis di sekeliling
+                ctx.strokeStyle = '#dddddd';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(padding - 1, padding - 1, originalRect.width + 2, originalRect.height + 2);
+                
+                // Download gambar
+                const link = document.createElement('a');
+                const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
+                link.download = `origamivault_qr_${timestamp}.png`;
+                link.href = finalCanvas.toDataURL('image/png');
+                link.click();
+            }).catch(error => {
+                console.error('Failed to generate image:', error);
+                alert('Failed to convert to image. Make sure there is no cross-origin content.');
             });
         }
     </script>

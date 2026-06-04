@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shamir Reconstruct | OrigamiVault - Encrypted Paper Storage</title>
+    <title>Shamir Reconstruct | QR PUSHARLIS UP2WIII - Create Paper Storage</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="files/logo.svg">
+    <!-- <link rel="icon" type="image/svg+xml" href="files/logo.svg"> -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OrigamiVault - Reconstruct Secret">
+    <meta property="og:title" content="QR PUSHARLIS UP2WIII - Reconstruct Secret">
     <meta property="og:description" content="Reconstruct your secret from Shamir shares.">
     <meta property="og:image" content="files/social.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OrigamiVault - Reconstruct Secret">
+    <meta name="twitter:title" content="QR PUSHARLIS UP2WIII - Reconstruct Secret">
     <meta name="twitter:description" content="Reconstruct your secret from Shamir shares.">
     <meta name="twitter:image" content="files/social.png">
 
@@ -329,10 +329,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <a href="encrypt.html"><img src="files/logo.svg" alt="OrigamiVault Logo" class="logo"></a>
-        </div>
-        <h1><span>OrigamiVault</span><span class="separator"> — </span><span class="subtitle-text">Reconstruct</span></h1>
+        <!-- <div class="logo-container">
+            <a href="encrypt.html"><img src="files/logo.svg" alt="QR PUSHARLIS UP2WIII Logo" class="logo"></a>
+        </div> -->
+        <h1><span>QR PUSHARLIS UP2WIII</span><span class="separator"> — </span><span class="subtitle-text">Reconstruct</span></h1>
 
         <div class="explanation">
             <strong>Reconstruct your secret:</strong> Scan or paste the required number of shares to reconstruct your original secret. The threshold was set when the secret was split.
@@ -386,7 +386,7 @@
     </div>
 
     <div class="footer">
-        <a href="https://github.com/origamivault/origamivault" target="_blank">OrigamiVault</a> is open source. Use at your own risk.
+        <a href="https://github.com/origamivault/origamivault" target="_blank">QR PUSHARLIS UP2WIII</a> is open source. Use at your own risk.
     </div>
 
     <script>
@@ -586,7 +586,7 @@
                 document.getElementById('inputSection').style.display = 'none';
                 document.getElementById('statusBox').style.display = 'none';
                 document.querySelector('.explanation').style.display = 'none';
-                document.querySelector('.logo-container').style.display = 'none';
+                // document.querySelector('.logo-container').style.display = 'none';
                 document.getElementById('errorMsg').style.display = 'none';
 
                 // Update title
@@ -615,7 +615,7 @@
                 html5QrCode.stop().then(() => {
                     startBtn.textContent = 'Scan QR Code';
                     // Show hidden elements
-                    document.querySelector('.logo-container').style.display = '';
+                    // document.querySelector('.logo-container').style.display = '';
                     document.querySelector('h1').style.display = '';
                     document.querySelector('.explanation').style.display = '';
                 });
@@ -650,7 +650,7 @@
             ).then(() => {
                 startBtn.textContent = 'Stop Scanning';
                 // Hide elements to maximize camera space
-                document.querySelector('.logo-container').style.display = 'none';
+                // document.querySelector('.logo-container').style.display = 'none';
                 document.querySelector('h1').style.display = 'none';
                 document.querySelector('.explanation').style.display = 'none';
             }).catch(err => {

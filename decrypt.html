@@ -6,17 +6,17 @@
     <title>Decrypt QR Content</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="files/logo.svg">
+    <!-- <link rel="icon" type="image/svg+xml" href="files/logo.svg"> -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OrigamiVault — Encrypted QR">
+    <meta property="og:title" content="QR PUSHARLIS UP2WIII — Scan">
     <meta property="og:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta property="og:image" content="files/social.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OrigamiVault — Encrypted QR">
+    <meta name="twitter:title" content="QR PUSHARLIS UP2WIII — Scan">
     <meta name="twitter:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta name="twitter:image" content="files/social.png">
 
@@ -302,10 +302,10 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <a href="encrypt.html"><img src="files/logo.svg" alt="OrigamiVault Logo" class="logo"></a>
-        </div>
-        <h1><span>OrigamiVault</span><span class="separator"> — </span><span class="subtitle-text">Encrypted QR</span></h1>
+        <!-- <div class="logo-container">
+            <a href="encrypt.html"><img src="files/logo.svg" alt="QR PUSHARLIS UP2WIII Logo" class="logo"></a>
+        </div> -->
+        <h1><span>QR PUSHARLIS UP2WIII</span><span class="separator"> — </span><span class="subtitle-text">Scan</span></h1>
 
         <div class="explanation" id="securityTip" style="margin-bottom: 20px;">
             <strong>Security tip:</strong> For better security, turn off internet and use incognito browser mode.
@@ -345,7 +345,7 @@
     </div>
 
     <div class="footer">
-        <a href="https://github.com/origamivault/origamivault" target="_blank">OrigamiVault</a> is open source. Use at your own risk.
+        <a href="https://github.com/origamivault/origamivault" target="_blank">QR PUSHARLIS UP2WIII</a> is open source. Use at your own risk.
     </div>
 
     <script>
@@ -357,13 +357,13 @@
             const hash = window.location.hash.substring(1); // Remove the #
             if (hash) {
                 qr_content = decodeURIComponent(hash);
-                // Encrypted data found in URL
+                // Create data found in URL
                 document.getElementById('encryptedData').value = qr_content;
 
                 // Hide scanner section and show password input
                 document.getElementById('scannerSection').querySelector('button[onclick="startScanner()"]').style.display = 'none';
                 document.getElementById('scanInstruction').style.display = 'none';
-                document.getElementById('securityTip').style.display = 'none';
+                // document.getElementById('securityTip').style.display = 'none';
                 document.getElementById('encryptLink').style.display = 'none';
                 document.getElementById('passwordSection').style.display = 'block';
                 document.getElementById('password').focus();
@@ -379,12 +379,12 @@
             document.querySelector('button[onclick="startScanner()"]').style.display = 'none';
 
             // Hide logo, subtitle, and security tip when scanning
-            const logoContainer = document.querySelector('.logo-container');
+            // const logoContainer = document.querySelector('.logo-container');
             const subtitle = document.querySelector('.subtitle');
-            const securityTip = document.getElementById('securityTip');
-            if (logoContainer) logoContainer.style.display = 'none';
+            // const securityTip = document.getElementById('securityTip');
+            // if (logoContainer) logoContainer.style.display = 'none';
             if (subtitle) subtitle.style.display = 'none';
-            if (securityTip) securityTip.style.display = 'none';
+            // if (securityTip) securityTip.style.display = 'none';
 
             hideMessages();
 
@@ -419,12 +419,12 @@
                         document.querySelector('button[onclick="startScanner()"]').style.display = 'block';
 
                         // Show logo, subtitle, and security tip again
-                        const logoContainer = document.querySelector('.logo-container');
+                        // const logoContainer = document.querySelector('.logo-container');
                         const subtitle = document.querySelector('.subtitle');
-                        const securityTip = document.getElementById('securityTip');
-                        if (logoContainer) logoContainer.style.display = 'block';
+                        // const securityTip = document.getElementById('securityTip');
+                        // if (logoContainer) logoContainer.style.display = 'block';
                         if (subtitle) subtitle.style.display = 'block';
-                        if (securityTip) securityTip.style.display = 'block';
+                        // if (securityTip) securityTip.style.display = 'block';
                     }
                 }).catch(err => {
                     console.error(err);
@@ -443,7 +443,7 @@
             // Validate version prefix (format: [OV_*])
             if (!/^\[OV_[^\]]+\]/.test(extractedData)) {
                 stopScanner();
-                document.getElementById('errorMsg').textContent = 'Invalid QR code format. Please scan a valid OrigamiVault encrypted QR code.';
+                document.getElementById('errorMsg').textContent = 'Invalid QR code format. Please scan a valid QR PUSHARLIS UP2WIII encrypted QR code.';
                 document.getElementById('errorMsg').style.display = 'block';
                 return;
             }
@@ -456,7 +456,7 @@
             // Hide the start scanner button, instruction text, security tip, and encrypt link
             document.querySelector('button[onclick="startScanner()"]').style.display = 'none';
             document.getElementById('scanInstruction').style.display = 'none';
-            document.getElementById('securityTip').style.display = 'none';
+            // document.getElementById('securityTip').style.display = 'none';
             document.getElementById('encryptLink').style.display = 'none';
 
             document.getElementById('passwordSection').style.display = 'block';
@@ -479,7 +479,7 @@
 
             try {
                 // Strip version prefix (format: [OV_*])
-                let cleanEncryptedData = encryptedData.replace(/^\[OV_[^\]]+\]/, '');
+                let cleanCreateData = encryptedData.replace(/^\[OV_[^\]]+\]/, '');
 
                 // Decrypt using Web Crypto API (AES-CBC, 128-bit)
                 // Static salt and IV (matching encrypt.html)
@@ -487,7 +487,7 @@
                 const iv = new Uint8Array(16); // All zeros
 
                 // Decode base64 to Uint8Array
-                const ciphertext = new Uint8Array(atob(cleanEncryptedData).split('').map(c => c.charCodeAt(0)));
+                const ciphertext = new Uint8Array(atob(cleanCreateData).split('').map(c => c.charCodeAt(0)));
 
                 // Derive key from password
                 const encoder = new TextEncoder();

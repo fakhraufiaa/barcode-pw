@@ -6,17 +6,17 @@
     <title>Encrypt QR Content</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="files/logo.svg">
+    <!-- <link rel="icon" type="image/svg+xml" href="files/logo.svg"> -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OrigamiVault — Encrypted QR">
+    <meta property="og:title" content="QR PUSHARLIS UP2WIII — Create">
     <meta property="og:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta property="og:image" content="files/social.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OrigamiVault — Encrypted QR">
+    <meta name="twitter:title" content="QR PUSHARLIS UP2WIII — Create">
     <meta name="twitter:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta name="twitter:image" content="files/social.png">
 
@@ -464,19 +464,19 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <a href="encrypt.html"><img src="files/logo.svg" alt="OrigamiVault Logo" class="logo"></a>
-        </div>
-        <h1><span>OrigamiVault</span><span class="separator"> — </span><span class="subtitle-text">Encrypted QR</span></h1>
+        <!-- <div class="logo-container">
+            <a href="encrypt.html"><img src="files/logo.svg" alt="QR PUSHARLIS UP2WIII Logo" class="logo"></a>
+        </div> -->
+        <h1><span>QR PUSHARLIS UP2WIII</span><span class="separator"> — </span><span class="subtitle-text">Create</span></h1>
 
         <!-- <div id="whyLink" style="text-align: center; margin-bottom: 20px;">
-            <a href="misc/why.html" style="color: #745530; text-decoration: none; font-size: 14px;">Why use OrigamiVault? See use cases →</a>
+            <a href="misc/why.html" style="color: #745530; text-decoration: none; font-size: 14px;">Why use QR PUSHARLIS UP2WIII? See use cases →</a>
         </div> -->
 
-        <div class="explanation" id="securityTip" style="margin-bottom: 20px;">
+        <!-- <div class="explanation" id="securityTip" style="margin-bottom: 20px;">
             <strong>Security tip:</strong> Consider encrypting only part of your secret and storing the rest separately. For extra protection, use
             incognito mode and go offline. <a href="misc/strategies.html" style="color: #745530;">More tips</a>
-        </div>
+        </div> -->
 
         <div id="formSection">
             <div class="form-group">
@@ -492,7 +492,7 @@
             <button onclick="encryptAndGenerateQR()">Encrypt & Generate Secure Link</button>
 
             <div class="link">
-                <a href="decrypt.html">Go to Decrypt Page</a>
+                <a href="decrypt.html">Go to Scanning Page</a>
             </div>
             <!-- 
             <div class="link">
@@ -504,7 +504,7 @@
     </div>
 
     <div class="footer">
-        <a href="https://github.com/origamivault/origamivault" target="_blank">OrigamiVault</a> is open source. Use at your own risk.
+        <a href="https://github.com/origamivault/origamivault" target="_blank">QR PUSHARLIS UP2WIII</a> is open source. Use at your own risk.
     </div>
 
     <script>
@@ -567,11 +567,11 @@
             const encrypted = '[OV_v1]' + encryptedBase64;
 
             // Change the title
-            document.querySelector('h1').textContent = 'Encrypted content';
+            document.querySelector('h1').textContent = 'Create content';
 
             // Hide the form section, security tip, and why link
             document.getElementById('formSection').style.display = 'none';
-            document.getElementById('securityTip').style.display = 'none';
+            // document.getElementById('securityTip').style.display = 'none';
             // document.getElementById('whyLink').style.display = 'none';
             
 
@@ -591,7 +591,7 @@
 
                 <div class="qr-container">
                     <div class="qr-item" style="text-align: center;">
-                        <div class="qr-label dont-print">Encrypted Data QR Code</div>
+                        <div class="qr-label dont-print">Create Data QR Code</div>
                         <div id="qrDataContainer" style="display: inline-block;"></div>
                         <div class="qr-description">Scan with phone/device camera and open the URL</div>
                     </div>
@@ -608,7 +608,7 @@
                 </div>
 
                 <div class="info-box">
-                    <div class="info-box-title">Encrypted Content (Base64)</div>
+                    <div class="info-box-title">Create Content (Base64)</div>
                     <div class="info-box-content">
                         <code style="font-size: 14px;">(S)${encryptedBase64}(E)</code>
                     </div>

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Decrypt Text | OrigamiVault - Encrypted Paper Storage</title>
+    <title>Decrypt Text | QR PUSHARLIS UP2WIII - Create Paper Storage</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../files/logo.svg">
+    <!-- <link rel="icon" type="image/svg+xml" href="../files/logo.svg"> -->
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="OrigamiVault — Encrypted QR">
+    <meta property="og:title" content="QR PUSHARLIS UP2WIII — Create">
     <meta property="og:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta property="og:image" content="../files/social.png">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="OrigamiVault — Encrypted QR">
+    <meta name="twitter:title" content="QR PUSHARLIS UP2WIII — Create">
     <meta name="twitter:description" content="Offline. Secure. Printable. Recoverable. Encrypt sensitive data and store it on paper using QR codes.">
     <meta name="twitter:image" content="../files/social.png">
 
@@ -258,17 +258,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo-container">
-            <a href="../encrypt.html"><img src="../files/logo.svg" alt="OrigamiVault Logo" class="logo"></a>
-        </div>
-        <h1><span>OrigamiVault</span><span class="separator"> — </span><span class="subtitle-text">Decrypt Text</span></h1>
+        <!-- <div class="logo-container">
+            <a href="../encrypt.html"><img src="../files/logo.svg" alt="QR PUSHARLIS UP2WIII Logo" class="logo"></a>
+        </div> -->
+        <h1><span>QR PUSHARLIS UP2WIII</span><span class="separator"> — </span><span class="subtitle-text">Decrypt Text</span></h1>
 
         <div class="explanation">
             <strong>Paste your encrypted content:</strong> Copy the encrypted base64 string from your printed page (between (S) and (E) markers) and paste it below along with your password to decrypt.
         </div>
 
         <div class="form-group">
-            <label for="encryptedText">Encrypted Content (Base64)</label>
+            <label for="encryptedText">Create Content (Base64)</label>
             <textarea id="encryptedText" placeholder="Paste your encrypted base64 string here..."></textarea>
         </div>
 
@@ -294,7 +294,7 @@
     </div>
 
     <div class="footer">
-        <a href="https://github.com/origamivault/origamivault" target="_blank">OrigamiVault</a> is an open source project
+        <a href="https://github.com/origamivault/origamivault" target="_blank">QR PUSHARLIS UP2WIII</a> is an open source project
     </div>
 
     <script>
@@ -315,16 +315,16 @@
             }
 
             // Clean the encrypted text - remove (S) and (E) markers if present
-            let cleanEncryptedData = encryptedText;
-            if (cleanEncryptedData.startsWith('(S)')) {
-                cleanEncryptedData = cleanEncryptedData.substring(3);
+            let cleanCreateData = encryptedText;
+            if (cleanCreateData.startsWith('(S)')) {
+                cleanCreateData = cleanCreateData.substring(3);
             }
-            if (cleanEncryptedData.endsWith('(E)')) {
-                cleanEncryptedData = cleanEncryptedData.substring(0, cleanEncryptedData.length - 3);
+            if (cleanCreateData.endsWith('(E)')) {
+                cleanCreateData = cleanCreateData.substring(0, cleanCreateData.length - 3);
             }
 
             // Remove any whitespace
-            cleanEncryptedData = cleanEncryptedData.replace(/\s+/g, '');
+            cleanCreateData = cleanCreateData.replace(/\s+/g, '');
 
             try {
                 // Decrypt using Web Crypto API (AES-CBC, 128-bit)
@@ -333,7 +333,7 @@
                 const iv = new Uint8Array(16); // All zeros
 
                 // Decode base64 to Uint8Array
-                const ciphertext = new Uint8Array(atob(cleanEncryptedData).split('').map(c => c.charCodeAt(0)));
+                const ciphertext = new Uint8Array(atob(cleanCreateData).split('').map(c => c.charCodeAt(0)));
 
                 // Derive key from password
                 const encoder = new TextEncoder();
